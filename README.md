@@ -9,4 +9,4 @@ The excellent Image captioning model using the DETR inspired architecture
 | M² Transformer          |     800 × 800    |       39.1       |       29.2       |       640       |
 | **DETR‑Powered Captioning** |     **800 × 800**    |       **24.8**       |       **25.7**       |       **200**       |
 
-*All runtimes measured according NVIDIA P100, batch=1, FP16, identical default decode settings with identical image resultion approximately.
+*All runtimes measured according NVIDIA P100, batch=1, identical default decode settings with identical image resultion approximately.
