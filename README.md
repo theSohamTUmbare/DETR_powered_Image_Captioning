@@ -1,7 +1,7 @@
 # DETR_powered_image_captioning
 The excellent Image captioning model using the DETR inspired architecture
 
----
+
 ## 🔍 Comparisons 
 
 | Model                       | Image Resolution | BLEU‑4 Score (%) | METEOR Score (%) | Total Time (ms) |
@@ -26,7 +26,7 @@ You can Play with this and other image captioning models on **CAPbot** (`Discord
 
 ![](Results/women_with_cat.png)
 
----
+
 ## 📬 Contact
 
 **Soham Umbare**  
@@ -36,5 +36,6 @@ IIIT Raichur
 ---
 
 ⭐ _If you find this work interesting, consider giving it a star on GitHub!_
+
 ---
 🧑‍💻 Happy Experimenting! 🔬
