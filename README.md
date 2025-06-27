@@ -1,6 +1,7 @@
 # DETR_powered_image_captioning
 The excellent Image captioning model using the DETR inspired architecture
 
+---
 ## 🔍 Comparisons 
 | Model                       | Image Resolution | BLEU‑4 Score (%) | METEOR Score (%) | Total Time (ms) |
 | :-------------------------- | :--------------: | :--------------: | :--------------: | :-------------:  |
@@ -13,5 +14,22 @@ The excellent Image captioning model using the DETR inspired architecture
 | **DETR‑Powered Captioning** |     **800 × 800**    |       **24.8**       |       **25.7**       |       **105**       |
 
 *runtimes measured according NVIDIA P100, batch=1, identical default decode settings with identical image resultion approximately.
+---
 
 ## Some Results 
+![](Results/boy_computer.png)
+
+![](Results/women_with_cat.png)
+
+---
+## 📬 Contact
+
+**Soham Umbare**  
+IIIT Raichur  
+📧 cs23b1068@iiitr.ac.in
+
+---
+
+⭐ _If you find this work interesting, consider giving it a star on GitHub!_
+---
+🧑‍💻 Happy Experimenting! 🔬
