@@ -13,3 +13,5 @@ The excellent Image captioning model using the DETR inspired architecture
 | **DETR‑Powered Captioning** |     **800 × 800**    |       **24.8**       |       **25.7**       |       **105**       |
 
 *runtimes measured according NVIDIA P100, batch=1, identical default decode settings with identical image resultion approximately.
+
+## Some Results 
