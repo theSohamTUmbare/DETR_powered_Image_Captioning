@@ -3,6 +3,7 @@ The excellent Image captioning model using the DETR inspired architecture
 
 ---
 ## 🔍 Comparisons 
+
 | Model                       | Image Resolution | BLEU‑4 Score (%) | METEOR Score (%) | Total Time (ms) |
 | :-------------------------- | :--------------: | :--------------: | :--------------: | :-------------:  |
 | Show & Tell             |     800 × 800    |       27.7       |       23.7       |       210*       |
@@ -14,6 +15,7 @@ The excellent Image captioning model using the DETR inspired architecture
 | **DETR‑Powered Captioning** |     **800 × 800**    |       **24.8**       |       **25.7**       |       **105**       |
 
 *runtimes measured according NVIDIA P100, batch=1, identical default decode settings with identical image resultion approximately.
+
 ---
 
 ## Some Results 
