@@ -17,6 +17,9 @@ The excellent Image captioning model using the DETR inspired architecture
 *runtimes measured according NVIDIA P100, batch=1, identical default decode settings with identical image resultion approximately.
 
 ---
+You can Play with this and other image captioning models on **CAPbot** (`Discord bot`) [visit this repository to learn more](https://github.com/theSohamTUmbare/CAPbot).
+
+---
 
 ## Some Results 
 ![](Results/boy_computer.png)
