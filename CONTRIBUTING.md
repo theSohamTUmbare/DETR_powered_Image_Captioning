@@ -31,4 +31,4 @@ Label your issue `enhancement` and describe:
 - **Backward‑compatibility**: any breaking changes?
 
 ## Getting Help 
--- Use GitHub **Discussions** 
+- Use GitHub **Discussions** 
