@@ -9,7 +9,7 @@ import torch.optim as optim
 from torch.nn import functional as F
 from tokenizers import ByteLevelBPETokenizer, Tokenizer
 from tokenizers.processors import TemplateProcessing
-from torch.utils.data import Dataset, DataLoader  # Fixed import
+from torch.utils.data import Dataset, DataLoader  
 from torchvision.transforms import Compose, RandomResizedCrop, RandomHorizontalFlip, ColorJitter, ToTensor, Normalize, Resize
 from transformers import CLIPTokenizer
 import os
@@ -32,23 +32,8 @@ def train(
     start_epoch: int = 0,
     num_epochs: int = 1000,
     pad_token_id: int = config.PAD_ID,
-    accumulation_steps: int =4,                    # <— new argument
+    accumulation_steps: int =4,                    
 ) -> List[float]:
-    """
-    Train the captioning model with teacher forcing, using gradient accumulation.
-
-    Args:
-        model: your DETR+caption model.
-        optimizer: optimizer for model parameters.
-        train_loader: yields (images, token_ids) batches.
-        start_epoch: which epoch to start from (for resuming).
-        num_epochs: total number of epochs to run.
-        pad_token_id: index to ignore in the loss.
-        accumulation_steps: how many mini‐batches to accumulate before each optimizer.step().
-
-    Returns:
-        epoch_losses: list of average training loss per epoch (loss per token).
-    """
     loss_fn = nn.CrossEntropyLoss(ignore_index=pad_token_id)
 
     epoch_losses: List[float] = []
@@ -61,13 +46,11 @@ def train(
 
         optimizer.zero_grad()  # zero out gradients at the very start of the epoch
 
-        # get current LR (assumes single param_group)
         current_lr = optimizer.param_groups[0]['lr']
         print(f"\n=== Epoch {epoch+1}/{num_epochs} | lr: {current_lr:.2e} ")
 
         pbar = tqdm(train_loader, desc=f"Epoch {epoch+1}", unit="batch")
         for batch_idx, (images, captions, _) in enumerate(pbar):
-            # Move to device
             images = images.to(config.DEVICE).float()
             captions = captions.to(config.DEVICE).long()
 
@@ -75,7 +58,6 @@ def train(
             # logits: [ B, T, V]
             logits = model(images, tgt_tokens=captions)
 
-            # shift logits and targets for next-token prediction
             logits = logits[:, :-1, :]   # [B, T-1, V]
             targets = captions[:, 1:]    # [B, T-1]
 
@@ -117,7 +99,7 @@ def train(
 
         print(f"Epoch {epoch+1} completed — avg loss per token: {epoch_loss:.4f}")
 
-        # save checkpoint every epoch (or adjust as needed)
+        # save checkpoint every epoch 
         checkpoint_path = f"DETR_CAP{epoch+1:03d}.pth"
         torch.save({
             'model_state_dict': model.state_dict(),
