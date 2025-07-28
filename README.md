@@ -69,6 +69,7 @@ pip install -r requirements.txt
 │   └── dataset/
 │       ├── dataloader.py   # data loading pipeline
 │       └── dataset.py      # dataset definitions
+└── requirements.txt
 ```
 
 4. Run FastAPI server for inference
