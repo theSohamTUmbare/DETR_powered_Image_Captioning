@@ -1,8 +1,22 @@
-# DETR_powered_image_captioning
-The excellent Image captioning model using the DETR inspired architecture
+# DETR‑Powered Image Captioning
+**Efficient. Interpretable. Detection‑Driven.**
+A blazing‑fast and smarter image captioning model built using [DETR (DEtection TRansformer)](https://arxiv.org/abs/2005.12872) to go beyond naïve patch‑based approaches.
+
+---
+
+## 🚀 Key Idea
+Most image captioning models (e.g., ViT‑GPT2, BLIP) treat images as a flat sequence of patches and generate captions purely in a sequence‑to‑sequence manner. But **captioning is fundamentally about detecting and describing the key elements in a scene**—objects, their relationships, and context.
+
+This work leverages DETR to:
+- **Discover Regions of Interest** without hardcoded object classes.
+- **Encode visual queries** via transformer layers for contextual fusion.
+- **Generate captions** from those region tokens with a lightweight transformer decoder.
+
+## 🏗️ Architecture
+![](architecture.png)
 
 
-## 🔍 Comparisons 
+## 📊 Comparisons 
 
 | Model                       | Image Resolution | BLEU‑4 Score (%) | METEOR Score (%) | Total Time (ms) |
 | :-------------------------- | :--------------: | :--------------: | :--------------: | :-------------:  |
@@ -16,8 +30,6 @@ The excellent Image captioning model using the DETR inspired architecture
 
 *runtimes measured according NVIDIA P100, batch=1, identical default decode settings with identical image resultion approximately.
 
----
-You can Play with this and other image captioning models on **CAPbot** (`Discord bot`) [visit this repository to learn more](https://github.com/theSohamTUmbare/CAPbot).
 
 ---
 
@@ -27,7 +39,72 @@ You can Play with this and other image captioning models on **CAPbot** (`Discord
 ![](Results/women_with_cat.png)
 
 
-## 📬 Contact
+## 🧰 Install & Run
+
+1. Clone the repository
+```bash
+git clone https://github.com/SohamUmbare/DETR_powered_image_captioning.git
+cd DETR_powered_image_captioning
+```
+
+2. Create a virtual environment and install dependencies
+```bash
+python -m venv venv
+source venv/bin/activate    # on Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+3. Directory Structure
+```bash
+├── src/                    # source code
+│   ├── app.py              # FastAPI inference server
+│   ├── appGradio.py        # Gradio demo for HF Spaces
+│   ├── config.py           # configuration settings
+│   ├── detr_model.py       # loading DETR backbone
+│   ├── detr_nested_tensor.py # DETR tensor utilities
+│   ├── imgcap_model.py     # DETRWithCaption definition
+│   ├── generate.py         # caption generation script
+│   ├── evaluate.py         # evaluation script
+│   ├── train.py            # training script
+│   └── dataset/
+│       ├── dataloader.py   # data loading pipeline
+│       └── dataset.py      # dataset definitions
+```
+
+4. Run FastAPI server for inference
+```bash
+cd src
+uvicorn app:app --reload --host 0.0.0.0 --port 3000
+```
+
+5. Launch Gradio demo locally
+```bash
+python appGradio.py
+```
+
+6. Generate a caption for an image
+```bash
+python generate.py --image path/to/image.jpg
+```
+
+7. Evaluate on test split
+```bash
+python evaluate.py --config config.py
+```
+
+8. Train the model 
+```bash
+python train.py --config config.py
+```
+
+---
+
+## 🤖 Live Demos & Integrations
+- **Hugging Face Spaces:** [DETR Powered ImgCAP Playground](https://huggingface.co/spaces/SohamUmbare/DETR_powered_imgCAP)
+- **Discord Bot:** [Try captions in real time via CAPbot](https://github.com/theSohamTUmbare/CAPbot)
+
+
+## 👤 Author
 
 **Soham Umbare**  
 IIIT Raichur  
