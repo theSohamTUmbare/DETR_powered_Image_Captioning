@@ -3,7 +3,7 @@
 <br/>
 _**Read the full technical write-up:**_ [DETR-Powered Efficient Image Captioning — LinkedIn (Aug 2025)](https://www.linkedin.com/pulse/reimagining-faster-image-captioning-detr-from-regions-tanaji-umbare-e3w3c)
 
-[![Watch the video](architecture.png)](DETR_captioning_video.mp4)
+![demo](https://github.com/theSohamTUmbare/DETR_powered_Image_Captioning/blob/main/DETR_captioning_gif.gif)
 
 A blazing‑fast and smarter image captioning model built using [DETR (DEtection TRansformer)](https://arxiv.org/abs/2005.12872) to go beyond naïve patch‑based approaches.
 
